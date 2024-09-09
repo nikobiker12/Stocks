@@ -1,0 +1,67 @@
+﻿@page "/trade"
+@using Stocks
+@using Microsoft.AspNetCore.Components.Web
+
+<PageTitle>Trade</PageTitle>
+
+<h1>Trade</h1>
+
+<form>
+    <div class="form-group">
+        <label for="id">ID</label>
+        <input type="number" class="form-control" id="id" @bind="@trade.Id">
+    </div>
+    <div class="form-group">
+        <label for="instrumentId">Instrument ID</label>
+        <input type="number" class="form-control" id="instrumentId" @bind="@trade.InstrumentId">
+    </div>
+    <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="number" class="form-control" id="quantity" @bind="@trade.Quantity">
+    </div>
+    <div class="form-group">
+        <label for="side">Side</label>
+        <select class="form-control" id="side" @bind="@trade.Side">
+            <option value="Buy">Buy</option>
+            <option value="Sell">Sell</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" class="form-control" id="price" @bind="@trade.Price">
+    </div>
+    <div class="form-group">
+        <label for="fees">Fees</label>
+        <input type="number" class="form-control" id="fees" @bind="@trade.Fees">
+    </div>
+    <div class="form-group">
+        <label for="tradeDate">Trade Date</label>
+        <input type="date" class="form-control" id="tradeDate" @bind="@trade.TradeDate">
+    </div>
+    <div class="form-group">
+        <label for="settlementDate">Settlement Date</label>
+        <input type="date" class="form-control" id="settlementDate" @bind="@trade.SettlementDate">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <form @onsubmit="HandleSubmit">
+        <!-- form fields -->
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</form>
+
+@code {
+    TradeBookingViewModel trade = new TradeBookingViewModel();
+
+    private void HandleSubmit()
+    {
+        // Call your method here
+        // Example: MyMethod();
+        ShowMessageBox();
+    }
+
+    private void ShowMessageBox()
+    {
+        // Show message box
+        MessageBox.Show("Trade submitted successfully!");
+    }
+}
